@@ -3,6 +3,12 @@
 
 const memoireElt = document.querySelector("#memoire");
 const  ecranElt = document.querySelector("#ecran");
+let pourcentElt= document.querySelector("#pourcent");
+
+pourcentElt.addEventListener=('click',()=>{
+    console.log("bravo");
+})
+
 
 // On stocke la valeur de l'écran "précédent"
 let precedent = 0;
