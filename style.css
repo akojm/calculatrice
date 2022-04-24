@@ -1,4 +1,135 @@
 /* No CSS */
 body{
-    background-color: rgb(158, 158, 158);
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(27, 26, 26);
+}
+
+ul{
+    list-style: none;
+    font-size: 1.3em;
+}
+
+/********** title **********/
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px ;
+    background-color: rgb(0, 0, 0);
+}
+.title:hover {
+    background-color: rgb(38, 33, 33);
+}
+.title i{
+    margin-left: 90px;
+    font-size: 2rem;
+    color:rgb(255, 167, 4);
+    flex: 0;
+    cursor: pointer;
+}
+.title i:hover{
+    color: white;
+}
+.title h2{
+    font-size: 2rem;
+    margin-left: 15px;
+    flex: 1;
+    color: white;   
+}
+
+/********  CONTENT *********/
+
+.content{
+    width: 500px;
+    height: 650px;
+    margin: 0 auto;
+}
+
+
+/********** LES ELEMENTS **********/
+.content .result{
+    display: flex;
+    padding: 10px 0px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 50px;
+    justify-content: space-between;
+    
+}
+.content .result p{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.content span{
+    margin: 0px 0px 0px 10px;
+    color:rgb(255, 167, 4);
+    font-weight: bold;
+    display:none ;
+}
+/********** LISTES DES ELEMENTS *********/
+.content ul{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    
+}
+.content ul li{
+   width: 80px;
+   height: 80px;
+   align-items: center;
+   border-radius: 15px;
+   display: flex;  
+   justify-content: center; 
+   cursor: pointer;
+    
+}
+
+.color-gray{
+    background-color: rgb(178, 177, 177);
+}
+.color-gray:hover{
+    background-color: rgb(3, 205, 3);
+    color: white;
+}
+
+.color-green{
+    background-color: rgb(3, 205, 3);
+}
+.color-green:hover{
+    background-color: white;
+    color:rgb(3, 205, 3) ;
+    font-weight: bold;
+    
+}
+.color-thin-gray{
+    background-color: rgb(255, 167, 4);
+}
+.color-thin-gray:hover{
+    background-color: white;
+    color:rgb(3, 205, 3) ;
+    font-weight: bold;
+}
+
+/******** Egal *********/
+.content .egal{
+    list-style: none;
+    padding: 20px 0px ;
+    background-color:rgb(255, 167, 4);
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;    
+}
+.content .egal:hover{
+    background-color:white;
+    color:rgb(3, 205, 3) ;
+    font-weight: bold;
+     
 }
