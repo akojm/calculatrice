@@ -30,7 +30,8 @@ let touches = document.querySelectorAll('li');
 for (let touche of touches ) {
     touche.addEventListener('click', clicTouches)  
 }
-
+// Ecouter un event clavier //
+document.addEventListener("keydown", clicTouches);
 
 // Récuperer la valeur de le stockage local
 memoire = (localStorage.memoire) ? parseFloat(localStorage.memoire) : 0;
@@ -38,8 +39,29 @@ if(memoire != 0)memoireElt.style.display = "initial";
 
 // fonction qui réagit au clic sur une touche
 
-function clicTouches() {
-let touche = this.innerText;
+function clicTouches(e) {
+    let touche;
+
+    // listes des touches autorisées //
+
+    const listeTouches =["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", ".", "Enter", "Escape"]
+
+  // On vérifie si on a l'évènement "Keydown"  
+ if (e.type === "keydown") {
+     // on compare la touche appuyée aux touches autorisées
+     if (listeTouches.includes(e.key)) {
+
+        // on va déactiver l'utilisation " par defaut " l'état naturel d'une touche
+        e.preventDefault();
+        
+        // on stocke la touche dans la variable touche
+         touche= e.key;
+     }
+ }else{
+ touche = this.innerText;
+ }
+
+
 
 // vérification d'un fiffre ou un point (.).
 if (parseFloat(touche) >=0 || touche === '.') {
@@ -51,6 +73,7 @@ if (parseFloat(touche) >=0 || touche === '.') {
     switch (touche) {
         // Touche " C " réinitialise tout //
         case "C":
+            case "Escape":
             precedent = 0;
             affichage= "";
             operation = null;
@@ -76,6 +99,7 @@ if (parseFloat(touche) >=0 || touche === '.') {
                 affichage = "";
             break;
             case "=" :
+                case "Enter":
 
             // on calcule la valeur de l'étape précédente
             precedent = (precedent === 0) ? parseFloat(affichage) : 
