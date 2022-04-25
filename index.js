@@ -5,11 +5,6 @@ const memoireElt = document.querySelector("#memoire");
 const  ecranElt = document.querySelector("#ecran");
 let pourcentElt= document.querySelector("#pourcent");
 
-pourcentElt.addEventListener=('click',()=>{
-    console.log("bravo");
-})
-
-
 // On stocke la valeur de l'écran "précédent"
 let precedent = 0;
 
@@ -55,7 +50,7 @@ function clicTouches(e) {
         e.preventDefault();
         
         // on stocke la touche dans la variable touche
-         touche= e.key;
+         touche = e.key;
      }
  }else{
  touche = this.innerText;
@@ -79,7 +74,7 @@ if (parseFloat(touche) >=0 || touche === '.') {
             operation = null;
             ecranElt.innerText=0;
             break;
-          
+   
             // les calculs //
             case "+" :
             case "-" :
@@ -137,6 +132,7 @@ if (parseFloat(touche) >=0 || touche === '.') {
             // Mettre à jour l'écran
             ecranElt.innerText = memoire;
             break;
+            
            
     }
 }
